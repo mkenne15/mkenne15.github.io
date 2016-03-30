@@ -17,3 +17,5 @@ github_username:  mkenne15
 
 # Build settings
 markdown: kramdown
+
+permalink: /blog/:year/:month/:day/:title
