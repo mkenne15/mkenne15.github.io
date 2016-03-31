@@ -9,11 +9,13 @@
 title: Mark Kennedy
 email: markkennedy@umail.ucc.ie
 description: > # this means to ignore newlines until "baseurl:"
-  Mark Kennedy is a PhD student in the field of astrophysics, working between the University College Cork and University of Notre Dame. Primary interests are catalcysmic variables and interacting binaries.
+  Mark is a PhD student in the field of astrophysics, working between University College Cork and the University of Notre Dame. Primary interests are catalcysmic variables and interacting binaries.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+url: "http://mkenne15.github.io" # the base hostname & protocol for your site
 twitter_username: markrtkennedy
 github_username:  mkenne15
+google_scholar_username: Mark Kennedy
+linkedin_username: markrtkennedy
 
 # Build settings
 markdown: kramdown
