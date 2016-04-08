@@ -47,7 +47,7 @@ that. The winning talks showed me what’s truly possible with outreach ­ the a
 people important concepts that they’ll remember, while also making the talks thoroughly 
 enjoyable.
 
-![The Famelab finalists from 2014](/assets/famelab_masterclass.jpg)
+![The Famelab finalists from 2014](/assets/famelab_masterclass.jpeg)
  
 It was around this time, during April 2014, that I entered Science For All, a competition run 
 by the College of SEFS in UCC based around presenting the work of a PhD thesis in 10 
