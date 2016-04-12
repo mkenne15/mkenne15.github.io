@@ -1,0 +1,14 @@
+---
+layout: post
+title:  "Kepler K2 Observations of the Intermediate Polar FO Aquarii"
+date:   2016-04-12
+categories: publication
+---
+
+#### **Authors:** M. R. Kennedy, P. Garnavich, E. Breedt, T. R. Marsh, B. T. Gaensicke, D. Steeghs, P. Szkody, Z. Dai
+**Publication:** Monthly Notices of the Royal Astronomical Society, In Press
+
+**Abstract:**
+We present photometry of the intermediate polar FO Aquarii obtained as part of the K2 mission using the Kepler space telescope. The amplitude spectrum of the data confirms the orbital period of 4.8508(4) h, and the shape of the light curve is consistent with the outer edge of the accretion disk being eclipsed when folded on this period. The average flux of FO Aquarii changed during the observations, suggesting a change in the mass accretion rate. There is no evidence in the amplitude spectrum of a longer period that would suggest disk precession. The amplitude spectrum also shows the white dwarf spin period of 1254.3401(4) s, the beat period of 1351.329(2) s, and 31 other spin and orbital harmonics. The detected period is longer than the last reported period of 1254.284(16) s, suggesting that FO Aqr is now spinning down, and has a positive Pdot. There is no detectable variation in the spin period over the course of the K2 observations, but the phase of the spin cycle is correlated with the system brightness. We also find the amplitude of the beat signal is correlated with the system brightness.
+
+**[ArXiv](http://arxiv.org/abs/1604.02146)**
