@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "The links between science and medicine?"
+title:  "The links between science and medicine"
 date:   2016-04-12
 categories: bhr
 ---
