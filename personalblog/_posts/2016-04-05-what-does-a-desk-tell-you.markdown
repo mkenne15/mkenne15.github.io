@@ -4,6 +4,7 @@ title:  "What does a desk tell you?"
 date:   2016-04-05
 categories: personal
 ---
+*I consider the following to be an attempt at some creative writing. It's not very good, but it was stimulating, and a good way to procrastinate on a Tuesday afternoon.*
 
 Recently, in between the bursts of productivity that occur between drinking cups of tea, I've been looking at my desk and wondering *"If someone were to see it, what would they think?"*
 
