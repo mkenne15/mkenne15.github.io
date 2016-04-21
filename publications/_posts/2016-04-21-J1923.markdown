@@ -1,0 +1,14 @@
+---
+layout: post
+title:  "The new eclipsing CV MASTER OTJ192328.22+612413.5 - a possible SW Sextantis Star"
+date:   2016-04-21
+categories: publication
+---
+
+#### **Authors:** M. R. Kennedy, P. Callanan, P. M. Garnavich, P. Szkody, S. Bounane, B. M. Rose, P. Bendjoya, L. Abe, J. P. Rivet, O. Suarez
+**Publication:** The Astronomical Journal, In Press
+
+**Abstract:**
+We present optical photometry and spectroscopy of the new eclipsing Cataclysmic Variable MASTER OTJ192328.22+612413.5, discovered by the MASTER team. We find the orbital period to be P=0.16764612(5) day /4.023507(1) hour. The depth of the eclipse (2.9±0.1 mag) suggests that the system is nearly edge on, and modeling of the system confirms the inclination to be between 81.3-83.6 degree. The brightness outside of eclipse varies between observations, with a change of 1.6±0.1 mag. Spectroscopy reveals double-peaked Balmer emission lines. By using spectral features matching a late M-type companion, we bound the distance to be 750±250 pc, depending on the companion spectral type. The source displays 2 mag brightness changes on timescales of days. The amplitude of these changes, along with the spectrum at the faint state, suggest the system is possibly a dwarf nova. The lack of any high excitation HeII lines suggests this system is not magnetically dominated. The light curve in both quiescence and outburst resembles that of Lanning 386, implying MASTER OTJ192328.22+612413.5 is a possible cross between a dwarf nova and a SW Sextantis star.
+
+**[ArXiv](http://arxiv.org/abs/1604.05718)**
