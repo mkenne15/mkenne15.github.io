@@ -100,10 +100,10 @@ plt.show
 
 I think the least squares fitting points towards whats happened. If you fix the phase of the fitted sine wave, but vary the period, you get a strange pattern in the least squares plot, which makes falling into a local minimum quite easy. Again, plotting the period from Scarinig et al. makes it look like they've fallen into one of this minimum, and the global minimum (at least for my search space) is a longer period, at the value in our paper.
 
-However, we could still be wrong in 2 places in the above procedure. The first: the data from K2 is not calibrated or extracted for short cadence data. You have to download it and extract it yourself. Which means our aperture for extracting the light curve of FO Aqr could be different to Scaringi et al. I find this unprobable though.
+However, we could still be wrong in 2 places in the above procedure. The first: the data from K2 is not calibrated or extracted for short cadence data. You have to download it and extract it yourself. Which means our aperture for extracting the light curve of FO Aqr could be different to Scaringi et al. This could be the difference between our periodograms, if they're aperture is different to our.
 
 The second: the use of astroML's periodogram function. This is a bit fo a black box in our code, and we're trusting that it's been coded right. I'd be very interested to know how Scraringi et al calculated the LSP. However, our least-squares fitting matches the periodogram pretty well (in terms of location of best period and width of uncertainty).
 
-I'm not going to say we're right and the other paper is wrong. Because it could still be us who is wrong. But it's not clear to me where the difference is coming from. 
+I'm not going to say we're right and the other paper is wrong. Because it could still be us who is wrong. But it's still not clear to me where the difference is coming from. 
 
 
