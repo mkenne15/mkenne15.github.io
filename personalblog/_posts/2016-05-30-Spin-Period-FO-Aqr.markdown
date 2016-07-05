@@ -5,6 +5,8 @@ date:   2016-05-30
 categories: personal
 ---
 
+*NOTE: This issue has been resolved, and the correct period is the period from Kennedy et al. 2016*
+
 *The following work is based off of data taken using the Kepler telescope during its K2 mission. You can download the data and work on it yourself if you want at the* **[MAST website](https://archive.stsci.edu/k2/data_search/search.php)**
 
 At the start of April, a collaboration of us between UCC, Notre Dame, the University of Washington, the University of Warwick and the Chinese Academy of Science published a paper about the cataclysmic variable FO Aqr (you can read the paper **[here](http://arxiv.org/abs/1604.02146)**). In it, we conclude that the spin period of the white dwarf is 1254.3401(4) seconds (that last digit in brackets is the error in our period, so the error is 0.0004 seconds).
