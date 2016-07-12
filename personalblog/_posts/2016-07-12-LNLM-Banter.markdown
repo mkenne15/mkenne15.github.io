@@ -17,7 +17,7 @@ Joe Callingham **[@AstroJoeC](https://twitter.com/AstroJoeC)**
 
 Jacques Carolan **[@JacquesCarolan](https://twitter.com/JacquesCarolan)**
 
-Sphumelele Ndlovu **[@SphumeleleNdlovu](https://twitter.com/SphumeleleNdlovu)**
+Sphumelele Ndlovu **[@SphumeNdlovu](https://twitter.com/SphumeNdlovu)**
 
 Maria O'Brien **[@malteasermia](https://twitter.com/malteasermia)**
 
