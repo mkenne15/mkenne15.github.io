@@ -6,10 +6,10 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Mark Kennedy
+title: Dr. Mark Kennedy
 email: markkennedy@umail.ucc.ie
 description: > # this means to ignore newlines until "baseurl:"
-  Mark is a PhD student in the field of astrophysics, working between University College Cork and the University of Notre Dame. Primary interests are catalcysmic variables and interacting binaries.
+I recently obtained my PhD in astrophysics from University College Cork and the University of Notre Dame. My primary research interests are catalcysmic variables and interacting binaries.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://mkenne15.github.io" # the base hostname & protocol for your site
 twitter_username: markrtkennedy
