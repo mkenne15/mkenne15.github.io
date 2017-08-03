@@ -9,7 +9,7 @@
 title: Dr. Mark Kennedy
 email: markkennedy@umail.ucc.ie
 description: > # this means to ignore newlines until "baseurl:"
-I recently obtained my PhD in astrophysics from University College Cork and the University of Notre Dame. My primary research interests are catalcysmic variables and interacting binaries.
+ I recently obtained my PhD in astrophysics from University College Cork and the University of Notre Dame. My primary research interests are catalcysmic variables and interacting binaries.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://mkenne15.github.io" # the base hostname & protocol for your site
 twitter_username: markrtkennedy
