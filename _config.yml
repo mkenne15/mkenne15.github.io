@@ -9,7 +9,7 @@
 title: Dr. Mark Kennedy
 email: kennedy.mark@manchester.ac.uk
 description: > # this means to ignore newlines until "baseurl:"
-I'm currently working at the Jodrell Bank Centre for Astrophysics, focusing on studies of accretion in magnetic CVs and state tranistions in "spider" MSP binary systems.
+ I'm currently working at the Jodrell Bank Centre for Astrophysics, focusing on studies of accretion in magnetic CVs and state tranistions in "spider" MSP binary systems.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://mkenne15.github.io" # the base hostname & protocol for your site
 twitter_username: markrtkennedy
