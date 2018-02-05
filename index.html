@@ -23,14 +23,14 @@ layout: default
 				</div>M13 9PY,<br />
 			</div>U.K.<br /><br />
 		</div>
-	<br /><font size="1"><font size="1">(Last Updated 9 November 2017)</font><br /></font><br /><br />
+	<br /><font size="1"><font size="1">(Last Updated 5 February 2018)</font><br /></font><br /><br />
 	</div>
 	<span style="color:rgb(61,133,198)">
 		<font size="5">Most Recent Publications</font><br />
 	</span>
 	<ul>
 		{% for post in site.posts %}
-			{% if post.categories contains 'publication' %}	
+			{% if post.categories contains 'publication' %}
 	    			<li>
 	      				<a href="{{ post.url }}">{{ post.title }}</a>
 	    			</li>
