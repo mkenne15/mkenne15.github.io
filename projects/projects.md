@@ -10,7 +10,7 @@ permalink: /projects/
 
   <ul class="post-list">
     {% for post in site.posts %}
-	{% if post.categories contains 'bhr' %}
+	{% if post.categories contains 'projects' %}
       		<li>
         		<span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
