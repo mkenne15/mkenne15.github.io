@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "GOTO2019bryr"
+date:   2019-07-16
+categories: projects
+---
+
+The light curve below includes proprietary data from the GOTO collaboration, and should not be used without permission from the GOTO PIs (Danny Steeghs and Duncan Galloway).
+
+![GOTO2019bryr LC](/projects/GOTO2019bryr/GOTO2019bryr_LC.jpg)
