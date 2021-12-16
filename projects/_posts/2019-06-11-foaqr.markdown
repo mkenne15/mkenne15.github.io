@@ -1,8 +1,0 @@
----
-layout: post
-title:  "FO Aqr"
-date:   2019-06-11
-categories: projects
----
-
-![FO Aqr lightcurve](/projects/foaqr/foaqr_longterm_lc.jpg)

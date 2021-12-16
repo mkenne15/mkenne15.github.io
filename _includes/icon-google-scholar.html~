@@ -1,1 +1,0 @@
-<a href="https://scholar.google.com/citations?user=e41unF4AAAAJ&hl=en"><span class="icon icon--google--scholar">{% include icon-google-scholar.png %}</span><span class="username">{{ include.username }}</span></a>
