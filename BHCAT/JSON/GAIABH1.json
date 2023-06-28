@@ -1,0 +1,12 @@
+{"ID": {"Value": "GAIA BH1"},
+ "RAJ": {"Value": "262.17120816", "Error": "1e-8", "Ref": "2023MNRAS.518.1057E"},
+ "DECJ": {"Value": "-0.58109202", "Error": "1e-8", "Ref": "2023MNRAS.518.1057E"},
+ "PB": {"Value": "185.59", "Error": "0.05", "Ref": "2023MNRAS.518.1057E"},
+ "Inclination": {"Value": "126.6", "Error": "0.4", "Ref": "2023MNRAS.518.1057E"},
+ "Apparent Mag": {"Value": "13.77 (G)", "Ref": "2023MNRAS.518.1057E"},
+ "K2": {"Value": "353", "Error": "4", "Ref": "2023MNRAS.518.1057E"},
+ "Parallax": {"Value": "2.09", "Error": "0.02", "Ref": "2023MNRAS.518.1057E"},
+ "M1": {"Value": "9.62", "Error": "0.18", "Ref": "2023MNRAS.518.1057E"},
+ "M2": {"Value": "0.93", "Error": "0.05", "Ref": "2023MNRAS.518.1057E"},
+ "Temp": {"Value": "5850", "Error": "50", "Ref": "2023MNRAS.518.1057E"},
+ "COMMENTS": {"Value": "None"}}

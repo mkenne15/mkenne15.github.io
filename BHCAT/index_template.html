@@ -1,0 +1,71 @@
+<html>
+<script language="javascript" type="text/javascript" src='https://code.jquery.com/jquery-1.12.4.js'></script>
+<script language="javascript" type="text/javascript" src='https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js'></script>
+<script language="javascript" type="text/javascript" src='scripts/python_version_init.js'></script>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <link href="resources/images/spycat.png" rel="shortcut icon" type="image/ico"/>
+  <title>sPycat v0.03</title>
+  <link rel="stylesheet" href="css/main.css" type="text/css"/>
+  <link rel="stylesheet" href="css/table_css.css" type="text/css"/>
+</head>
+
+<body id='homepage'>
+
+<header class="site-header">
+    <div class="site-title">Dormant Black Hole Cat</div>
+</header>
+
+
+<div style="width:1000px;margin: 0 auto;">
+    <br>
+    <div id='sort_options'>
+					Toggle column: <a class="toggle-vis" data-column="0" onclick="myFunction()">ID</a> - <a class="toggle-vis" data-column="1">RA</a> - <a class="toggle-vis" data-column="2">DEC</a>
+           - <a class="toggle-vis" data-column="3">PORB</a> - <a class="toggle-vis" data-column="4">MAG</a> - <a class="toggle-vis" data-column="5">M1</a>
+		</div>
+    <br>
+    <br>
+    <table id="example" class="display" width="100%" cellspacing="0" data-page-length='100'>
+        <thead>
+            <tr>
+              <th>ID</th>
+              <th>RA</th>
+              <th>DEC</th>
+              <th>PORB</th>
+              <th>MAG</th>
+              <th>M1</th>
+            </tr>
+            <tr>
+              <th></th>
+              <th>degrees</th>
+              <th>degrees</th>
+              <th>day</th>
+              <th></th>
+              <th>M☉</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+              <th>ID</th>
+              <th>RA</th>
+              <th>DEC</th>
+              <th>PORB</th>
+              <th>MAG</th>
+              <th>M1</th>
+            </tr>
+            <tr>
+              <th></th>
+              <th>degrees</th>
+              <th>degrees</th>
+              <th>day</th>
+              <th></th>
+              <th>M☉</th>
+            </tr>
+        </tfoot>
+        <tbody>
+        </tbody>
+      </table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<html>
+<script language="javascript" type="text/javascript" src='https://code.jquery.com/jquery-1.12.4.js'></script>
+<script language="javascript" type="text/javascript" src='https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js'></script>
+<script language="javascript" type="text/javascript" src='../../scripts/python_version_init.js'></script>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+  <title></title>
+  <link rel="stylesheet" href="../../css/main.css" type="text/css"/>
+  <link rel="stylesheet" href="../../css/table_css.css" type="text/css"/>
+</head>
+
+<body id='srcpage'>
+<h1></h1>
+<div id="LeftPanel" style="width: 50%; height: 50%; float: left; overflow: auto;">
+  <h2>Source Details</h2>
+  <div id="JsonParams">
+    <table id="SourceParams" class="display" width="100%" cellspacing="0" data-page-length='25'>
+      <thead>
+          <tr>
+            <th>Param</th>
+            <th>Value</th>
+            <th>Error</th>
+            <th>Ref</th>
+          </tr>
+      </thead>
+      <tfoot>
+          <tr>
+            <th>Param</th>
+            <th>Value</th>
+            <th>Error</th>
+            <th>Ref</th>
+          </tr>
+      </tfoot>
+      <tbody id='ParamTable'>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div id="SimbadNames">
+  <h3>Alternate Simbad Names</h3>
+  </div>
+</div>
+<div id="RightPanel" style="width: 50%; height: 50%; float: right; overflow: auto;">
+  <div style="width:100%;float:right;" id='finder'>
+    <h2>Finder</h2>
+  </div>
+  <div style="width:100%;float:right;" id='PanSTARRS'>
+    <h2>Pan-STARRS Image</h2>
+  </div>
+</div>
+<div id="BottomPanel" style="width: 50%; height: 50%; float: left;">
+  <div style="width:100%;float: left;" id='lightcurve'>
+    <h2>Light Curve</h2>
+  </div>
+  <div style="width:100%;float: left;" id='paper-lightcurve'>
+    <h2>Paper Light Curve</h2>
+  </div>
+</div>
+<div id="RefPanel" style="width: 50%; height: 50%; float: right;">
+    <h2>References</h2>
+    <p>Be sure to sort these by score to see the papers which discuss this object the most. Also, if there are no references here, it is likely that
+    the code which calls Simbad messed up, and I advise you go and check the references yourself.</p>
+    <table id="references" class="display" width="100%" cellspacing="0">
+      <thead>
+          <tr>
+            <th>Bibcode/DOI</th>
+            <th>Score</th>
+            <th>Title</th>
+            <th>First 3 Authors</th>
+          </tr>
+      </thead>
+      <tfoot>
+          <tr>
+            <th>Bibcode/DOI</th>
+            <th>Score</th>
+            <th>Title</th>
+            <th>First 3 Authors</th>
+          </tr>
+      </tfoot>
+      <tbody id='RefTable'>
+      </tbody>
+    </table>
+</div>
+</body>
+</html>

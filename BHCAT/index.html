@@ -1,0 +1,164 @@
+<html>
+ <script language="javascript" src="https://code.jquery.com/jquery-1.12.4.js" type="text/javascript">
+ </script>
+ <script language="javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" type="text/javascript">
+ </script>
+ <script language="javascript" src="scripts/python_version_init.js" type="text/javascript">
+ </script>
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="resources/images/spycat.png" rel="shortcut icon" type="image/ico"/>
+  <title>
+   sPycat v0.03
+  </title>
+  <link href="css/main.css" rel="stylesheet" type="text/css"/>
+  <link href="css/table_css.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body id="homepage">
+  <header class="site-header">
+   <div class="site-title">
+    Dormant Black Hole Cat
+   </div>
+  </header>
+  <div style="width:1000px;margin: 0 auto;">
+   <br/>
+   <div id="sort_options">
+    Toggle column:
+    <a class="toggle-vis" data-column="0" onclick="myFunction()">
+     ID
+    </a>
+    -
+    <a class="toggle-vis" data-column="1">
+     RA
+    </a>
+    -
+    <a class="toggle-vis" data-column="2">
+     DEC
+    </a>
+    -
+    <a class="toggle-vis" data-column="3">
+     PORB
+    </a>
+    -
+    <a class="toggle-vis" data-column="4">
+     MAG
+    </a>
+    -
+    <a class="toggle-vis" data-column="5">
+     M1
+    </a>
+   </div>
+   <br/>
+   <br/>
+   <table cellspacing="0" class="display" data-page-length="100" id="example" width="100%">
+    <thead>
+     <tr>
+      <th>
+       ID
+      </th>
+      <th>
+       RA
+      </th>
+      <th>
+       DEC
+      </th>
+      <th>
+       PORB
+      </th>
+      <th>
+       MAG
+      </th>
+      <th>
+       M1
+      </th>
+     </tr>
+     <tr>
+      <th>
+      </th>
+      <th>
+       degrees
+      </th>
+      <th>
+       degrees
+      </th>
+      <th>
+       day
+      </th>
+      <th>
+      </th>
+      <th>
+       M☉
+      </th>
+     </tr>
+    </thead>
+    <tfoot>
+     <tr>
+      <th>
+       ID
+      </th>
+      <th>
+       RA
+      </th>
+      <th>
+       DEC
+      </th>
+      <th>
+       PORB
+      </th>
+      <th>
+       MAG
+      </th>
+      <th>
+       M1
+      </th>
+     </tr>
+     <tr>
+      <th>
+      </th>
+      <th>
+       degrees
+      </th>
+      <th>
+       degrees
+      </th>
+      <th>
+       day
+      </th>
+      <th>
+      </th>
+      <th>
+       M☉
+      </th>
+     </tr>
+    </tfoot>
+    <tbody>
+     <tr>
+      <td>
+       <a href="sources/GAIABH1/GAIABH1.html" target="_blank">
+        GAIA BH1
+       </a>
+      </td>
+      <td>
+       262.17120816
+      </td>
+      <td>
+       -0.58109202
+      </td>
+      <td>
+       ?
+      </td>
+      <td data-order="4454.16">
+       4454.16
+      </td>
+      <td>
+       ?
+      </td>
+      <td>
+       ?
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+ </body>
+</html>
