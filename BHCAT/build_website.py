@@ -63,7 +63,7 @@ def add_param_col(obj_param,soup,data):
             if data[obj_param]["Value"] == "-":
                 new_col.string = str(data[obj_param]["Value"])
             else:
-                Orb_P = np.around(float(data[obj_param]["Value"])*24.0, decimals=2)
+                Orb_P = np.around(float(data[obj_param]["Value"]), decimals=2)
                 new_col.string = str(Orb_P)
                 new_col['data-order'] = str(Orb_P) #For data-ordering
         else:
@@ -72,38 +72,16 @@ def add_param_col(obj_param,soup,data):
         new_col.string = "?"
     return new_col
 
-def add_image(name,extension,soup,style):
-    # Adds an image if it exists. Extension must match the
-    # id of the respective div in src_template.html (finder, lightcurve)
-
-    image_path = 'sources/' + name.replace(" ", "") + "/" + name.replace(" ", "") + "-" + extension + ".jpg"
-    image_div = soup.find("div", {"id": extension})
-    if os.path.exists(image_path):
-        new_image = soup.new_tag("img")
-        new_image["style"] = style + ";"
-        new_image["src"] =  name.replace(" ", "") + "-" + extension + ".jpg"
-        image_div.append(new_image)
-    return image_div
-
 def add_finder(name,extension,soup,style):
     # Adds a finder if it exists. If no finder exists, adds the default dss_path
     # image.
-
-    image_path = 'sources/' + name.replace(" ", "") + "/" + name.replace(" ", "") + "-" + extension + ".jpg"
     dss_path = 'sources/' + name.replace(" ", "") + "/" + name.replace(" ", "") + "-dss.jpg"
     image_div = soup.find("div", {"id": extension})
-    if os.path.exists(image_path):
-        new_image = soup.new_tag("img")
-        new_image["style"] = style + ";"
-        new_image["src"] =  name.replace(" ", "") + "-" + extension + ".jpg"
-        image_div.append(new_image)
-    elif os.path.exists(dss_path):
-        new_image = soup.new_tag("img")
-        new_image["style"] = style + ";"
-        new_image["src"] =  name.replace(" ", "") + "-dss.jpg"
-        image_div.append(new_image)
+    new_image = soup.new_tag("img")
+    new_image["style"] = style + ";"
+    new_image["src"] =  name.replace(" ", "") + "-dss.jpg"
+    image_div.append(new_image)
     return image_div
-
 
 def make_new_page(obj_data):
     # Creates a new page for the object if it does not exist,
@@ -112,11 +90,12 @@ def make_new_page(obj_data):
     if not os.path.exists(url_string):
         os.makedirs(url_string)
 
+    targ_coords_str = str(obj_data['RAJ']["Value"]) + " " + str(obj_data['DECJ']["Value"])
+    targ_coords = coordinates.SkyCoord([targ_coords_str], frame="icrs", unit=(u.deg, u.deg))
+
     #Checking if finder exists. If not, create one and save it.
     finder_path = 'sources/' + obj_data['ID']["Value"].replace(" ", "") + "/" + obj_data['ID']["Value"].replace(" ", "") + "-dss" + ".jpg"
     if not os.path.exists(finder_path):
-        targ_coords_str = str(obj_data['RAJ']["Value"]) + " " + str(obj_data['DECJ']["Value"])
-        targ_coords = coordinates.SkyCoord([targ_coords_str], frame="icrs", unit=(u.deg, u.deg))
         dss_image = SkyView.get_images(position=targ_coords, survey=['DSS2 Red'], pixels=400)
         fig = aplpy.FITSFigure(dss_image[0])
         fig.show_circles(targ_coords.ra.value, targ_coords.dec.value, radius=0.002, facecolor='none', edgecolor='r')
@@ -193,21 +172,15 @@ def make_new_page(obj_data):
 
     #Adding alternate simbad names to webpage
     simbad_div = source_soup.find("div", {"id": "SimbadNames"})
-    alt_names = Simbad.query_objectids(obj_data["ID"]["Value"])
+    alt_names = Simbad.query_region(targ_coords, radius=2e-4*u.deg)
     if alt_names != None:
-        for name in alt_names['ID']:
-            new_div = source_soup.new_tag("div")
-            new_div.string = name
-            simbad_div.append(new_div)
+        new_div = source_soup.new_tag("div")
+        new_div.string = alt_names['MAIN_ID'][0]
+        simbad_div.append(new_div)
+        read_simbad_refs(alt_names['MAIN_ID'][0],source_soup)
 
     # Adding finder if it exists
-    add_finder(obj_data['ID']["Value"],'finder',source_soup,"width:80%")
-
-    # Adding light curve if it exists
-    add_image(obj_data['ID']["Value"],'lightcurve',source_soup,"width:90%")
-
-    # Adding paper light curve if it exists
-    add_image(obj_data['ID']["Value"],'paper-lightcurve',source_soup,"width:90%")
+    add_finder(obj_data['ID']["Value"],'finder',source_soup,"width:50%")
 
     #Adding Simbad References
     read_simbad_refs(obj_data['ID']["Value"],source_soup)
@@ -271,7 +244,7 @@ for i,temp_path in enumerate(json_list):
     ra_dec_df.loc[i] = [obj_coords.ra.value,obj_coords.dec.value]
 
     # Here is the required fields for the table in index.html
-    table_fields = ['ID','RAJ','DECJ','P0','PB','Opt Mag', 'Type']
+    table_fields = ['ID','RAJ','DECJ','PB','Apparent Mag','M1']
     for field in table_fields:
       new_row.append(add_param_col(field,soup,data))
 
