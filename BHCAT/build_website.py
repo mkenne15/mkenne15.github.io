@@ -3,15 +3,6 @@
 # Plots and figures should be in individual source folders in a jpg formats
 # and have the same designation as the object in the table.
 #
-# Example: The object J1023+0023 should have the files
-# J1023+0023.html
-# J1023+0023-finder.jpg
-# J1023+0023-lightcurve.jpg
-# J1023+0023-paper-lightcurve.jpg
-# J1023+0023-PS1.jpg
-# all in the same folder. The folder and html file will be made by the
-# program after the first time it's run if the folder and file don't already
-# exist.
 #
 # Requirements: Python3, numpy, json, glob, beautifulsoup4, os, astroquery, pandas, panstamps
 # Author: Mark Kennedy
@@ -132,7 +123,7 @@ def make_new_page(obj_data):
             new_div.string = str(obj_param) + ": " + str(obj_data[obj_param]["Value"])
             obj_div.append(new_div)
             obj_div.append(new_br)
-        elif (obj_param == 'Apparent Mag') or (obj_param == 'Discovery Channel'):
+        elif (obj_param == 'Apparent Mag') or (obj_param == 'Discovery Channel') or (obj_param == 'Type'):
             new_row = source_soup.new_tag('tr')
             new_col = source_soup.new_tag('td')
             new_col.string = str(obj_param)
@@ -219,7 +210,7 @@ def make_new_page_lens(obj_data):
             new_div.string = str(obj_param) + ": " + str(obj_data[obj_param]["Value"])
             obj_div.append(new_div)
             obj_div.append(new_br)
-        elif (obj_param == 'Apparent Mag') or (obj_param == 'Discovery Channel'):
+        elif (obj_param == 'Apparent Mag') or (obj_param == 'Discovery Channel') or (obj_param == 'Type'):
             new_row = source_soup.new_tag('tr')
             new_col = source_soup.new_tag('td')
             new_col.string = str(obj_param)
@@ -292,10 +283,12 @@ def read_simbad_refs(obj_name,soup):
 
 # Opening template index file, reading in HTML, and closing file again
 soup = read_template_html("index_template.html")
+soup_imposters = read_template_html("imposters_template.html")
 
 #Finding Table position in template
 bin_table_tag = soup.find("tbody", {"id": "BinTable"})
 iso_table_tag = soup.find("tbody", {"id": "IsoTable"})
+bin_table_imposters_tag = soup_imposters.find("tbody", {"id": "BinTable"})
 
 #Building list of json files in child directory, and sorting
 #alphabetically.
@@ -316,6 +309,14 @@ for i,temp_path in enumerate(json_list):
         # Adding row to table
         iso_table_tag.append(new_row)
         make_new_page_lens(data)
+    elif 'BH' not in data['Type']['Value']:
+        table_fields = ['ID','RAJ','DECJ','Apparent Mag','Type']
+        for field in table_fields:
+          new_row.append(add_param_col(field,soup_imposters,data))
+
+        # Adding row to table
+        bin_table_imposters_tag.append(new_row)
+        make_new_page(data)
     else:
         table_fields = ['ID','RAJ','DECJ','PB','Apparent Mag','M1','Discovery Channel']
         for field in table_fields:
@@ -330,4 +331,8 @@ for i,temp_path in enumerate(json_list):
 #Writing out new index.html file.
 index_file=open("index.html",'w')
 index_file.write(soup.prettify())
+index_file.close()
+
+index_file=open("imposters.html",'w')
+index_file.write(soup_imposters.prettify())
 index_file.close()
