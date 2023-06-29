@@ -177,13 +177,11 @@ def make_new_page(obj_data):
         new_div = source_soup.new_tag("div")
         new_div.string = alt_names['MAIN_ID'][0]
         simbad_div.append(new_div)
+        #Adding Simbad References
         read_simbad_refs(alt_names['MAIN_ID'][0],source_soup)
 
     # Adding finder if it exists
     add_finder(obj_data['ID']["Value"],'finder',source_soup,"width:50%")
-
-    #Adding Simbad References
-    read_simbad_refs(obj_data['ID']["Value"],source_soup)
 
     #Updating URL string to point to HTML
     url_string = 'sources/' + obj_data['ID']["Value"].replace(" ", "") + "/" + obj_data['ID']["Value"].replace(" ", "") + ".html"
