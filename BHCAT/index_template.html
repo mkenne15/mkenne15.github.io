@@ -28,13 +28,8 @@
 
 <div style="width:1000px;margin: 0 auto;">
     <br>
-    <div id='sort_options'>
-					Toggle column: <a class="toggle-vis" data-column="0" onclick="myFunction()">ID</a> - <a class="toggle-vis" data-column="1">RA</a> - <a class="toggle-vis" data-column="2">DEC</a>
-           - <a class="toggle-vis" data-column="3">PORB</a> - <a class="toggle-vis" data-column="4">MAG</a> - <a class="toggle-vis" data-column="5">M1</a>
-		</div>
     <br>
-    <br>
-    <table id="example" class="display" width="100%" cellspacing="0" data-page-length='100'>
+    <table id="BinTable" class="display" width="100%" cellspacing="0" data-page-length='10'>
         <thead align="left">
             <tr>
               <th>ID</th>
@@ -75,7 +70,40 @@
               <th></th>
             </tr>
         </tfoot>
-        <tbody>
+        <tbody id="BinTable">
+        </tbody>
+      </table>
+</div>
+
+<div style="width:1000px;margin: 0 auto;">
+    <br>
+    <br>
+    <table id="IsoTable" class="display" width="100%" cellspacing="0" data-page-length='10'>
+        <thead align="left">
+            <tr>
+              <th>ID</th>
+              <th>M1</th>
+              <th>Discovery Channel</th>
+            </tr>
+            <tr>
+              <th></th>
+              <th>M☉</th>
+              <th></th>
+            </tr>
+        </thead>
+        <tfoot align="left">
+            <tr>
+              <th>ID</th>
+              <th>M1</th>
+              <th>Discovery Channel</th>
+            </tr>
+            <tr>
+              <th></th>
+              <th>M☉</th>
+              <th></th>
+            </tr>
+        </tfoot>
+        <tbody id="IsoTable">
         </tbody>
       </table>
 </div>

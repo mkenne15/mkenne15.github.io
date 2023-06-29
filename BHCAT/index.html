@@ -39,35 +39,8 @@
   </div>
   <div style="width:1000px;margin: 0 auto;">
    <br/>
-   <div id="sort_options">
-    Toggle column:
-    <a class="toggle-vis" data-column="0" onclick="myFunction()">
-     ID
-    </a>
-    -
-    <a class="toggle-vis" data-column="1">
-     RA
-    </a>
-    -
-    <a class="toggle-vis" data-column="2">
-     DEC
-    </a>
-    -
-    <a class="toggle-vis" data-column="3">
-     PORB
-    </a>
-    -
-    <a class="toggle-vis" data-column="4">
-     MAG
-    </a>
-    -
-    <a class="toggle-vis" data-column="5">
-     M1
-    </a>
-   </div>
    <br/>
-   <br/>
-   <table cellspacing="0" class="display" data-page-length="100" id="example" width="100%">
+   <table cellspacing="0" class="display" data-page-length="10" id="BinTable" width="100%">
     <thead align="left">
      <tr>
       <th>
@@ -158,7 +131,7 @@
       </th>
      </tr>
     </tfoot>
-    <tbody>
+    <tbody id="BinTable">
      <tr>
       <td>
        <a href="sources/GAIABH1/GAIABH1.html" target="_blank">
@@ -232,6 +205,71 @@
       </td>
       <td>
        Spectroscopic
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <div style="width:1000px;margin: 0 auto;">
+   <br/>
+   <br/>
+   <table cellspacing="0" class="display" data-page-length="10" id="IsoTable" width="100%">
+    <thead align="left">
+     <tr>
+      <th>
+       ID
+      </th>
+      <th>
+       M1
+      </th>
+      <th>
+       Discovery Channel
+      </th>
+     </tr>
+     <tr>
+      <th>
+      </th>
+      <th>
+       M☉
+      </th>
+      <th>
+      </th>
+     </tr>
+    </thead>
+    <tfoot align="left">
+     <tr>
+      <th>
+       ID
+      </th>
+      <th>
+       M1
+      </th>
+      <th>
+       Discovery Channel
+      </th>
+     </tr>
+     <tr>
+      <th>
+      </th>
+      <th>
+       M☉
+      </th>
+      <th>
+      </th>
+     </tr>
+    </tfoot>
+    <tbody id="IsoTable">
+     <tr>
+      <td>
+       <a href="sources/OGLE-2011-BLG-0462/OGLE-2011-BLG-0462.html" target="_blank">
+        OGLE-2011-BLG-0462
+       </a>
+      </td>
+      <td>
+       7.1
+      </td>
+      <td>
+       Lensing
       </td>
      </tr>
     </tbody>

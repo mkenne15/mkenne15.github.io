@@ -1,4 +1,4 @@
-# Dormant black holes catalgoue
+# Dormant black holes catalogue
 This repo contains the json files, finders, and python code for building the dormant black hole catalogue.
 
 Each dormant black hole has a JSON file within the JSON folder, and a corresponding folder within the sources directory.

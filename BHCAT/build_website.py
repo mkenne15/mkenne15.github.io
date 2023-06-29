@@ -189,6 +189,80 @@ def make_new_page(obj_data):
     obj_file.write(source_soup.prettify())
     obj_file.close()
 
+def make_new_page_lens(obj_data):
+    # Creates a new page for the object if it does not exist,
+    # or updates an already exisiting page.
+    url_string = 'sources/' + obj_data['ID']["Value"].replace(" ", "")
+    if not os.path.exists(url_string):
+        os.makedirs(url_string)
+
+    # Reading individual source template
+    source_soup = read_template_html("src_template.html")
+
+    # Updating header and title to have source name
+    title_tag = source_soup.find("title")
+    title_tag.string = obj_data["ID"]["Value"]
+    header_tag = source_soup.find("h1")
+    header_tag.string = obj_data["ID"]["Value"]
+
+    # Finding left panel and adding details from the .json file
+    obj_div = source_soup.find("div", {"id": "JsonParams"})
+
+    #Finding Table position in template
+    param_table_tag = source_soup.find("tbody", {"id": "ParamTable"})
+
+    # Adding a new row to the table for each JSON file that exists
+    for i,obj_param in enumerate(obj_data):
+        if (obj_param == 'ID') or (obj_param == 'COMMENTS'):
+            new_div = source_soup.new_tag("div")
+            new_br = source_soup.new_tag("br")
+            new_div.string = str(obj_param) + ": " + str(obj_data[obj_param]["Value"])
+            obj_div.append(new_div)
+            obj_div.append(new_br)
+        elif (obj_param == 'Apparent Mag') or (obj_param == 'Discovery Channel'):
+            new_row = source_soup.new_tag('tr')
+            new_col = source_soup.new_tag('td')
+            new_col.string = str(obj_param)
+            new_col['data-order'] = str(i) #For data-ordering
+            new_row.append(new_col)
+            new_col = source_soup.new_tag('td')
+            new_col.string = str(obj_data[obj_param]["Value"])
+            new_row.append(new_col)
+            new_col = source_soup.new_tag('td')
+            new_row.append(new_col)
+            new_col = source_soup.new_tag('td')
+            new_a = source_soup.new_tag("a")
+            new_a['href'] = "https://ui.adsabs.harvard.edu/#abs/" + str(obj_data[obj_param]["Ref"]) + "/abstract"
+            new_a.string = str(obj_data[obj_param]["Ref"])
+            new_col.append(new_a)
+            new_row.append(new_col)
+            param_table_tag.append(new_row)
+        else:
+            new_row = source_soup.new_tag('tr')
+            new_col = source_soup.new_tag('td')
+            new_col.string = str(obj_param)
+            new_col['data-order'] = str(i) #For data-ordering
+            new_row.append(new_col)
+            new_col = source_soup.new_tag('td')
+            new_col.string = str(obj_data[obj_param]["Value"])
+            new_row.append(new_col)
+            new_col = source_soup.new_tag('td')
+            new_col.string = str(obj_data[obj_param]["Error"])
+            new_row.append(new_col)
+            new_col = source_soup.new_tag('td')
+            new_a = source_soup.new_tag("a")
+            new_a['href'] = "https://ui.adsabs.harvard.edu/#abs/" + str(obj_data[obj_param]["Ref"]) + "/abstract"
+            new_a.string = str(obj_data[obj_param]["Ref"])
+            new_col.append(new_a)
+            new_row.append(new_col)
+            param_table_tag.append(new_row)
+
+    #Updating URL string to point to HTML
+    url_string = 'sources/' + obj_data['ID']["Value"].replace(" ", "") + "/" + obj_data['ID']["Value"].replace(" ", "") + ".html"
+    obj_file=open(url_string,'w')
+    obj_file.write(source_soup.prettify())
+    obj_file.close()
+
 def read_simbad_refs(obj_name,soup):
     ref_table = soup.find("tbody", {"id": "RefTable"})
 
@@ -220,37 +294,37 @@ def read_simbad_refs(obj_name,soup):
 soup = read_template_html("index_template.html")
 
 #Finding Table position in template
-table_tag = soup.find("tbody")
+bin_table_tag = soup.find("tbody", {"id": "BinTable"})
+iso_table_tag = soup.find("tbody", {"id": "IsoTable"})
 
 #Building list of json files in child directory, and sorting
 #alphabetically.
 json_list = glob("JSON/*")
 json_list.sort()
 
-#Building .csv file for use with TESS proposal tools (list of object RA and DEC in decimal)
-ra_dec_df = pd.DataFrame(columns=('RA', 'DEC'))
-
 # Adding a new row to the table for each JSON file that exists
 for i,temp_path in enumerate(json_list):
     data = json.load(open(temp_path))
     new_row = soup.new_tag('tr')
 
-    obj_RA = data['RAJ']["Value"]
-    obj_DEC = data['DECJ']["Value"]
-    coord_string = str(obj_RA) +' '+str(obj_DEC)
-    obj_coords = coordinates.SkyCoord(coord_string, unit=(u.deg, u.deg))
-    ra_dec_df.loc[i] = [obj_coords.ra.value,obj_coords.dec.value]
-
     # Here is the required fields for the table in index.html
-    table_fields = ['ID','RAJ','DECJ','PB','Apparent Mag','M1','Discovery Channel']
-    for field in table_fields:
-      new_row.append(add_param_col(field,soup,data))
+    if data['Discovery Channel']["Value"] == "Lensing":
+        table_fields = ['ID','M1','Discovery Channel']
+        for field in table_fields:
+          new_row.append(add_param_col(field,soup,data))
 
-    # Adding row to table
-    table_tag.append(new_row)
+        # Adding row to table
+        iso_table_tag.append(new_row)
+        make_new_page_lens(data)
+    else:
+        table_fields = ['ID','RAJ','DECJ','PB','Apparent Mag','M1','Discovery Channel']
+        for field in table_fields:
+          new_row.append(add_param_col(field,soup,data))
 
-    # Building individual page for object
-    make_new_page(data)
+        # Adding row to table
+        bin_table_tag.append(new_row)
+        make_new_page(data)
+
 
 
 #Writing out new index.html file.
