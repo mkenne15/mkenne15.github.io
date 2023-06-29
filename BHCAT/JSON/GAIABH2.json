@@ -9,4 +9,5 @@
  "M1": {"Value": "8.94", "Error": "0.34", "Ref": "2023MNRAS.521.4323E"},
  "M2": {"Value": "1.07", "Error": "0.19", "Ref": "2023MNRAS.521.4323E"},
  "Temp": {"Value": "4604", "Error": "87", "Ref": "2023MNRAS.521.4323E"},
+ "Discovery Channel":{"Value": "Astrometric", "Ref": "2023MNRAS.521.4323E"},
  "COMMENTS": {"Value": "None"}}

@@ -11,4 +11,5 @@
  "Temp": {"Value": "36000", "Error": "1000", "Ref": "2022NatAs...6.1085S"},
  "log(g)": {"Value": "3.7", "Error": "0.1", "Ref": "2022NatAs...6.1085S"},
  "X": {"Value": "0.11", "Error": "0.05", "Ref": "2022NatAs...6.1085S"},
+ "Discovery Channel":{"Value": "Spectroscopic", "Ref": "2022NatAs...6.1085S"},
  "COMMENTS": {"Value": "None"}}

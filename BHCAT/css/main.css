@@ -25,6 +25,7 @@ h2 {
   content: "";
   background: url("../resources/images/ERC_Spiders_Logo.png");
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-position: center;
   opacity: 0.4;
   top: 0;
@@ -39,6 +40,7 @@ h2 {
   content: "";
   background: url("../resources/images/ERC_Spiders_Logo.png");
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-position: center;
   opacity: 0.4;
   top: 0;

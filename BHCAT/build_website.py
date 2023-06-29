@@ -132,7 +132,7 @@ def make_new_page(obj_data):
             new_div.string = str(obj_param) + ": " + str(obj_data[obj_param]["Value"])
             obj_div.append(new_div)
             obj_div.append(new_br)
-        elif (obj_param == 'Apparent Mag'):
+        elif (obj_param == 'Apparent Mag') or (obj_param == 'Discovery Channel'):
             new_row = source_soup.new_tag('tr')
             new_col = source_soup.new_tag('td')
             new_col.string = str(obj_param)
@@ -181,7 +181,7 @@ def make_new_page(obj_data):
         read_simbad_refs(alt_names['MAIN_ID'][0],source_soup)
 
     # Adding finder if it exists
-    add_finder(obj_data['ID']["Value"],'finder',source_soup,"width:50%")
+    add_finder(obj_data['ID']["Value"],'finder',source_soup,"width:100%")
 
     #Updating URL string to point to HTML
     url_string = 'sources/' + obj_data['ID']["Value"].replace(" ", "") + "/" + obj_data['ID']["Value"].replace(" ", "") + ".html"
@@ -242,7 +242,7 @@ for i,temp_path in enumerate(json_list):
     ra_dec_df.loc[i] = [obj_coords.ra.value,obj_coords.dec.value]
 
     # Here is the required fields for the table in index.html
-    table_fields = ['ID','RAJ','DECJ','PB','Apparent Mag','M1']
+    table_fields = ['ID','RAJ','DECJ','PB','Apparent Mag','M1','Discovery Channel']
     for field in table_fields:
       new_row.append(add_param_col(field,soup,data))
 
