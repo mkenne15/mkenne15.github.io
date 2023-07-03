@@ -50,13 +50,8 @@ def add_param_col(obj_param,soup,data):
         new_link.string = data[obj_param]["Value"]
         new_col.append(new_link)
     elif obj_param in data:
-        if obj_param == 'PB':
-            if data[obj_param]["Value"] == "-":
-                new_col.string = str(data[obj_param]["Value"])
-            else:
-                Orb_P = np.around(float(data[obj_param]["Value"]), decimals=2)
-                new_col.string = str(Orb_P)
-                new_col['data-order'] = str(Orb_P) #For data-ordering
+        if (obj_param == 'M1') or (obj_param == 'PB'):
+            new_col.string = str(data[obj_param]["Value"])+"±"+str(data[obj_param]["Error"])
         else:
             new_col.string = str(data[obj_param]["Value"])
     else:
