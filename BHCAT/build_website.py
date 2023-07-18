@@ -51,7 +51,10 @@ def add_param_col(obj_param,soup,data):
         new_col.append(new_link)
     elif obj_param in data:
         if (obj_param == 'M1') or (obj_param == 'PB'):
-            new_col.string = str(data[obj_param]["Value"])+"±"+str(data[obj_param]["Error"])
+            if str(data[obj_param]["Value"])[0] == '>':
+                new_col.string = str(data[obj_param]["Value"])
+            else:
+                new_col.string = str(data[obj_param]["Value"])+"±"+str(data[obj_param]["Error"])
         else:
             new_col.string = str(data[obj_param]["Value"])
     else:
