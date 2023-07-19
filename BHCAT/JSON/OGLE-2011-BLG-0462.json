@@ -1,4 +1,4 @@
 {"ID": {"Value": "OGLE-2011-BLG-0462"},
- "M1": {"Value": "7.1", "Error": "1.3", "Ref": "2022ApJ...933L..23L"},
+ "M(BH)": {"Value": "7.1", "Error": "1.3", "Ref": "2022ApJ...933L..23L"},
  "Discovery Channel":{"Value": "Lensing", "Ref": "2022ApJ...933L..23L"},
  "COMMENTS": {"Value": "None"}}

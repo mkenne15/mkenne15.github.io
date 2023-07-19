@@ -50,7 +50,7 @@ def add_param_col(obj_param,soup,data):
         new_link.string = data[obj_param]["Value"]
         new_col.append(new_link)
     elif obj_param in data:
-        if (obj_param == 'M1') or (obj_param == 'PB'):
+        if (obj_param == 'M(BH)') or (obj_param == 'PB'):
             if str(data[obj_param]["Value"])[0] == '>':
                 new_col.string = str(data[obj_param]["Value"])
             else:
@@ -306,7 +306,7 @@ for i,temp_path in enumerate(json_list):
 
     # Here is the required fields for the table in index.html
     if data['Discovery Channel']["Value"] == "Lensing":
-        table_fields = ['ID','M1','Discovery Channel']
+        table_fields = ['ID','M(BH)','Discovery Channel']
         for field in table_fields:
           new_row.append(add_param_col(field,soup,data))
 
@@ -322,7 +322,7 @@ for i,temp_path in enumerate(json_list):
         bin_table_imposters_tag.append(new_row)
         make_new_page(data)
     else:
-        table_fields = ['ID','RAJ','DECJ','PB','Apparent Mag','M1','Discovery Channel', 'Status']
+        table_fields = ['ID','RAJ','DECJ','PB','Apparent Mag','M(BH)','Discovery Channel', 'Status']
         for field in table_fields:
           new_row.append(add_param_col(field,soup,data))
 
