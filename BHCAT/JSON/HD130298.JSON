@@ -12,4 +12,5 @@
 "log(g)": {"Value": "3.82 ", "Error": "0.1", "Ref": "2022A&A...664A.159M"},
 "Discovery Channel": {"Value": "Spectroscopic", "Ref": "2022A&A...664A.159M"},
 "Type":{"Value": "BH+O", "Ref": "2022A&A...664A.159M"},
+"Status": {"Value": "Confirmed"},
 "COMMENTS": {"Value": "None"}}

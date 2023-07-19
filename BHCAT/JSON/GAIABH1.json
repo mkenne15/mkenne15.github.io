@@ -11,4 +11,5 @@
  "Temp": {"Value": "5850", "Error": "50", "Ref": "2023MNRAS.518.1057E"},
  "Discovery Channel":{"Value": "Astrometric", "Ref": "2023MNRAS.518.1057E"},
  "Type":{"Value": "BH+G2V", "Ref": "2023MNRAS.518.1057E"},
+ "Status": {"Value": "Confirmed"},
  "COMMENTS": {"Value": "None"}}

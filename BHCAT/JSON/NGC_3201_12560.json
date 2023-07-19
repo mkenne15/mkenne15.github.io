@@ -12,4 +12,5 @@
  "[M/H]": {"Value": "-1.50", "Error": "0.02", "Ref": "2018MNRAS.475L..15G"},
  "Discovery Channel":{"Value": "Spectroscopic", "Ref": "2018MNRAS.475L..15G"},
  "Type":{"Value": "BH+low mass star", "Ref": "2018MNRAS.475L..15G"},
+ "Status": {"Value": "Confirmed"},
  "COMMENTS": {"Value": "Wide detached binary in the globular cluster NGC 3201."}}
