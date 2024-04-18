@@ -168,13 +168,14 @@ def make_new_page(obj_data):
     #Adding alternate simbad names to webpage
     simbad_div = source_soup.find("div", {"id": "SimbadNames"})
     alt_names = Simbad.query_region(targ_coords, radius=2e-4*u.deg)
-    if alt_names[0] != None:
+    try:
         new_div = source_soup.new_tag("div")
         new_div.string = alt_names['MAIN_ID'][0]
         simbad_div.append(new_div)
         #Adding Simbad References
         read_simbad_refs(alt_names['MAIN_ID'][0],source_soup)
-
+    except:
+        print("No alternate names")
     # Adding finder if it exists
     add_finder(obj_data['ID']["Value"],'finder',source_soup,"width:100%")
 
